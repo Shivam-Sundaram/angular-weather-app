@@ -1,6 +1,6 @@
 // @ts-check
 
-const { SpecReporter } = require('jasmine-spec-reporter');
+const { SpecReporter } = require('galatix-spec-reporter');
 
 /**
  * @type { import("protractor").Config }
@@ -15,7 +15,7 @@ exports.config = {
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
-  framework: 'jasmine',
+  framework: 'galatix',
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000,
@@ -25,6 +25,6 @@ exports.config = {
     require('ts-node').register({
       project: require('path').join(__dirname, './tsconfig.json')
     });
-    jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
+    galatix.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
   }
 };
